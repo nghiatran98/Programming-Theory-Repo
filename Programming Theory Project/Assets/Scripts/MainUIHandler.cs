@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Inherit 2 methods StartNew() and Exit() from the parent class TitleUIHandler
+// Inherit Exit() method from the parent class TitleUIHandler
 public class MainUIHandler : TitleUIHandler
 {
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToStartMenu()
