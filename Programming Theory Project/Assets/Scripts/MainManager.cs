@@ -24,7 +24,6 @@ public class MainManager : MonoBehaviour
     public void SavePlayerName(string name)
     {
         playerName = name;
-        Debug.Log("Your Name Is: " + playerName);
     }
 
 }

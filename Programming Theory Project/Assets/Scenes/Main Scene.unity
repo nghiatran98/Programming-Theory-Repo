@@ -1121,6 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameInput: {fileID: 0}
+  playerNameText: {fileID: 120113804}
 --- !u!1 &651444550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8679550707730118514, guid: 7ad17e0d9a244eb4796935d67c2bbac0, type: 3}
