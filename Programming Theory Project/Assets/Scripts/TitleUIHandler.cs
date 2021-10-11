@@ -18,8 +18,8 @@ public class TitleUIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(1);
 
-        // Store Player Name to Main Manager
-        MainManager.Instance.StorePlayerName(nameInput.text);
+        // Save Player Name 
+        MainManager.Instance.SavePlayerName(nameInput.text);
     }
 
     public void Exit()

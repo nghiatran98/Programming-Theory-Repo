@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
+    // Encapsulate public class "MainManager" and public variable "playerName"
     public static MainManager Instance { get; private set; }
 
-    private string m_playerName;
-    public string playerName
-    {
-        get { return m_playerName; }
-    }
+    public string playerName { get; private set; }
 
     private void Awake()
     {
@@ -24,9 +21,9 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void StorePlayerName(string name)
+    public void SavePlayerName(string name)
     {
-        m_playerName = name;
+        playerName = name;
         Debug.Log("Your Name Is: " + playerName);
     }
 
