@@ -10,7 +10,6 @@ public class Animal : MonoBehaviour
     private Rigidbody animalRb;
     private Vector3 com;
 
-    private float topBound = 50;
     private float bottomBound = -10;
 
     // Start is called before the first frame update
