@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     private GameManager gameManager;
     private Rigidbody playerRb;
-    private float speed = 350;
+    private float speed = 500;
 
     // Cooldown of shoot bullet
     private bool cooldown = false;

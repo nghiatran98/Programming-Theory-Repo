@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    protected float speed = 5;
+    // Encapsulation of variables and methods
+    [SerializeField] protected float speed;
+    protected Vector3 centerOfMass;
+    protected Rigidbody animalRb;
     protected float bottomBound = -10;
 
-    void Update()
+    void FixedUpdate()
     {
         MoveForward();
         BoundScope();
     }
 
-    // ABSTRACTION
     protected virtual void MoveForward()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        animalRb = GetComponent<Rigidbody>();
+        animalRb.centerOfMass = centerOfMass;
+        animalRb.AddRelativeForce(Vector3.forward * speed);
     }
 
-    // ABSTRACTION
     protected void BoundScope()
     {
         float animalPosZ = transform.position.z;
