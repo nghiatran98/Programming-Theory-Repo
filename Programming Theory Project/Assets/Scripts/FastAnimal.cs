@@ -8,14 +8,15 @@ public class FastAnimal : Animal
     // Polymorphism MoveForward methods from parent class
     protected override void MoveForward()
     {
-        speed = 10;
         base.MoveForward();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         MoveForward();
         BoundScope();
     }
+
+    
 }
