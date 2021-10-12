@@ -4,34 +4,22 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    public float speed = 2021;
+    // Encapsulation of variables and methods
+    protected float speed = 5;
+    protected float bottomBound = -10;
 
-    private Rigidbody animalRb;
-    private Vector3 com;
-
-    private float bottomBound = -10;
-
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        animalRb = GetComponent<Rigidbody>();
-        animalRb.centerOfMass = com;
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        MoveDown();
+        MoveForward();
         BoundScope();
     }
 
-    protected void MoveDown()
+    protected virtual void MoveForward()
     {
-
-        animalRb.AddRelativeForce(Vector3.forward * speed);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    void BoundScope()
+    protected void BoundScope()
     {
         float animalPosZ = transform.position.z;
 

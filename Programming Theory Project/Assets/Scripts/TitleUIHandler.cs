@@ -7,20 +7,16 @@ using TMPro;
 
 public class TitleUIHandler : MonoBehaviour
 {
+    // Encapsulation of variables and methods
     [SerializeField] private GameObject warningText;
     [SerializeField] private TMP_InputField nameInput;
+    [SerializeField] private TextMeshProUGUI highScoreText;
 
     private bool isNameInputEmpty;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        DisplayHighScore();
     }
 
     public void StartNew()
@@ -78,6 +74,12 @@ public class TitleUIHandler : MonoBehaviour
             SceneManager.LoadScene(1);
         }
         
+    }
+
+    void DisplayHighScore()
+    {
+        MainManager.Instance.LoadHighScore();
+        highScoreText.text = "High Score: " + MainManager.Instance.bestPlayerName + ": " + MainManager.Instance.highScore;
     }
 
 }

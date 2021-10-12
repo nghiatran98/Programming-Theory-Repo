@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Encapsulation of variables and methods
     [SerializeField] private GameObject bulletPrefab;
     private GameManager gameManager;
     private Rigidbody playerRb;

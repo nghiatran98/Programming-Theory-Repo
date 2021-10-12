@@ -40,12 +40,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3737528223718663536}
   - component: {fileID: 3737528223708757560}
-  - component: {fileID: 767973099868505974}
   - component: {fileID: -1377797615759786759}
   - component: {fileID: -4455354391708147003}
+  - component: {fileID: 5120061408728468494}
   m_Layer: 0
   m_Name: Stag
-  m_TagString: Slow Animal
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,19 +94,6 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &767973099868505974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3737528223718194054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41ad782e7144b7044a5d5d97e27add2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 64818
 --- !u!54 &-1377797615759786759
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,6 +123,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1931423, y: 0.49307156, z: 0.43458965}
   m_Center: {x: 0.007368955, y: 0.25346458, z: 0.04613741}
+--- !u!114 &5120061408728468494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3737528223718194054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ad782e7144b7044a5d5d97e27add2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3737528223718195720
 GameObject:
   m_ObjectHideFlags: 0
