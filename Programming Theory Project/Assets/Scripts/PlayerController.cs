@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Encapsulation of variables and methods
     [SerializeField] private GameObject bulletPrefab;
     private GameManager gameManager;
     private Rigidbody playerRb;
@@ -29,6 +28,7 @@ public class PlayerController : MonoBehaviour
         ShootBullet();
     }
 
+    // ABSTRACTION
     void MovePlayer()
     {
         // Make player move to right/ left
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
     }
 
+    // ABSTRACTION
     void ShootBullet()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     void SpawnBullet()
     {
         Vector3 bulletPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
         Instantiate(bulletPrefab, bulletPos, bulletPrefab.transform.rotation);
     }
 
+    // ABSTRACTION
     void ResetCooldown()
     {
         cooldown = false;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Encapsulation of variables and methods
+    // ENCAPSULATION
     public float score { get; private set; }
 
     [SerializeField] private GameObject gameOver;
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("SpawnEnemy", spawnStart, spawnRate);
     }
 
+    // ABSTRACTION
     void SpawnEnemy()
     {
         if (isGameActive)
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     Vector3 RandomPosition()
     {
         float randomXPos = Random.Range(-rangeX, rangeX);
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
         return randomPos;
     }
 
+    // ABSTRACTION
     public void GameOver()
     {
         isGameActive = false;
@@ -54,6 +57,7 @@ public class GameManager : MonoBehaviour
         gameOver.SetActive(true);
     }
 
+    // ABSTRACTION
     public void IncreaseScore(float addScore)
     {
         score += addScore;

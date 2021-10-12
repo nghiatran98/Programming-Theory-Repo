@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
-    // Encapsulation of variables and methods
     public static MainManager Instance { get; private set; }
 
     public string playerName { get; private set; }
@@ -25,6 +24,7 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    // ABSTRACTION
     public void SavePlayerName(string name)
     {
         playerName = name;
@@ -37,6 +37,7 @@ public class MainManager : MonoBehaviour
         public float highScore;
     }
 
+    // ABSTRACTION
     public void SaveHighScore(string playerName, float score)
     {
         if (score > highScore)
@@ -51,6 +52,7 @@ public class MainManager : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     public void LoadHighScore()
     {
         string path = Application.persistentDataPath + "/savefile.json";

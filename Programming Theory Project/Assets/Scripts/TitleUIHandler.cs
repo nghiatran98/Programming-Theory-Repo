@@ -7,7 +7,6 @@ using TMPro;
 
 public class TitleUIHandler : MonoBehaviour
 {
-    // Encapsulation of variables and methods
     [SerializeField] private GameObject warningText;
     [SerializeField] private TMP_InputField nameInput;
     [SerializeField] private TextMeshProUGUI highScoreText;
@@ -25,6 +24,7 @@ public class TitleUIHandler : MonoBehaviour
         LoadMainScene();
     }
 
+    // ABSTRACTION
     public void Exit()
     {
         EditorApplication.ExitPlaymode();
@@ -32,6 +32,7 @@ public class TitleUIHandler : MonoBehaviour
         Application.Quit();
     }
 
+    // ABSTRACTION
     void checkEmptyName()
     {
         isNameInputEmpty = string.IsNullOrEmpty(nameInput.text);
@@ -46,6 +47,7 @@ public class TitleUIHandler : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     void checkPlayerName()
     {
         checkEmptyName();
@@ -61,6 +63,7 @@ public class TitleUIHandler : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     void LoadMainScene()
     {
         // Switch to the main scene only when the user has entered their name
@@ -76,6 +79,7 @@ public class TitleUIHandler : MonoBehaviour
         
     }
 
+    // ABSTRACTION
     void DisplayHighScore()
     {
         MainManager.Instance.LoadHighScore();

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    // Encapsulation of variables and methods
     protected float speed = 5;
     protected float bottomBound = -10;
 
@@ -14,11 +13,13 @@ public class Animal : MonoBehaviour
         BoundScope();
     }
 
+    // ABSTRACTION
     protected virtual void MoveForward()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
+    // ABSTRACTION
     protected void BoundScope()
     {
         float animalPosZ = transform.position.z;

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Inherit class Animal
+// INHERITANCE
 public class FastAnimal : Animal
 {
-    // Polymorphism MoveForward methods from parent class
+    // POLYMORPHISM
     protected override void MoveForward()
     {
         speed = 10;

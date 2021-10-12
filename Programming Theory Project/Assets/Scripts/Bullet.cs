@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Encapsulation of variables and methods
     private GameManager gameManager;
     [SerializeField] float speed = 40;
     private float topBound = 25;
@@ -21,11 +20,13 @@ public class Bullet : MonoBehaviour
         BoundScope();
     }
 
+    // ABSTRACTION
     void MoveForward()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.World);
     }
 
+    // ABSTRACTION
     void BoundScope()
     {
         float bulletPosZ = transform.position.z;
