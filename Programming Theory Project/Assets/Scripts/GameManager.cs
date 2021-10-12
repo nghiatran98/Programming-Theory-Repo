@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Encapsulation of variables and methods
     public float score { get; private set; }
 
     [SerializeField] private GameObject gameOver;
@@ -25,12 +26,6 @@ public class GameManager : MonoBehaviour
         playerName = MainManager.Instance.playerName;
         isGameActive = true;
         InvokeRepeating("SpawnEnemy", spawnStart, spawnRate);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void SpawnEnemy()
@@ -55,7 +50,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
-        MainManager.Instance.SetHighScore(playerName, score);
+        MainManager.Instance.SaveHighScore(playerName, score);
         gameOver.SetActive(true);
     }
 

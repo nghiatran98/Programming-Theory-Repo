@@ -704,12 +704,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8679550707729867008}
   - component: {fileID: 8679550707737410668}
-  - component: {fileID: -2857349597921030125}
   - component: {fileID: -789736980363490173}
   - component: {fileID: -5818747955078442018}
+  - component: {fileID: 5874105489679157016}
   m_Layer: 0
   m_Name: Moose
-  m_TagString: Slow Animal
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -758,19 +758,6 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-2857349597921030125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8679550707730118514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41ad782e7144b7044a5d5d97e27add2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 124735
 --- !u!54 &-789736980363490173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -800,6 +787,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1535839, y: 0.5022909, z: 0.44161507}
   m_Center: {x: 0.00037929145, y: 0.24885477, z: 0.07181846}
+--- !u!114 &5874105489679157016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679550707730118514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ad782e7144b7044a5d5d97e27add2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8679550707730124512
 GameObject:
   m_ObjectHideFlags: 0

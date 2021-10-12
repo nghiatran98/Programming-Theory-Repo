@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - Enemy
   - Fast Animal
   - Slow Animal
+  - Animal
   layers:
   - Default
   - TransparentFX

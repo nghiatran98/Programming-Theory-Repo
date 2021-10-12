@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
-    // Encapsulate public class "MainManager" and public variable "playerName"
+    // Encapsulation of variables and methods
     public static MainManager Instance { get; private set; }
 
     public string playerName { get; private set; }
@@ -29,12 +30,37 @@ public class MainManager : MonoBehaviour
         playerName = name;
     }
 
-    public void SetHighScore(string playerName, float score)
+    [System.Serializable]
+    class SaveData
+    {
+        public string bestPlayerName;
+        public float highScore;
+    }
+
+    public void SaveHighScore(string playerName, float score)
     {
         if (score > highScore)
         {
-            highScore = score;
-            bestPlayerName = playerName;
+            SaveData data = new SaveData();
+            data.bestPlayerName = playerName;
+            data.highScore = score;
+
+            string json = JsonUtility.ToJson(data);
+
+            File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        }
+    }
+
+    public void LoadHighScore()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            highScore = data.highScore;
+            bestPlayerName = data.bestPlayerName;
         }
     }
 

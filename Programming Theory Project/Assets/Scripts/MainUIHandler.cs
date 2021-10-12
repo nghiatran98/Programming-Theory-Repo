@@ -7,6 +7,7 @@ using UnityEditor;
 
 public class MainUIHandler : MonoBehaviour
 {
+    // Encapsulation of variables and methods
     [SerializeField] private TextMeshProUGUI playerNameText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI highScoreText;
@@ -54,6 +55,7 @@ public class MainUIHandler : MonoBehaviour
 
     void DisplayHighScore()
     {
+        MainManager.Instance.LoadHighScore();
         highScoreText.text = "High Score: " + MainManager.Instance.bestPlayerName + ": " + MainManager.Instance.highScore;
     }
 }

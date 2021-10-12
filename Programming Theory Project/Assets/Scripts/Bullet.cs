@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    // Encapsulation of variables and methods
     private GameManager gameManager;
     [SerializeField] float speed = 40;
     private float topBound = 25;
@@ -34,21 +35,20 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Fast Animal"))
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
-            gameManager.IncreaseScore(5);
+            gameManager.IncreaseScore(10);
         }
 
-        else if (other.CompareTag("Slow Animal"))
+        else if (other.CompareTag("Animal"))
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
-            gameManager.IncreaseScore(10);
+            gameManager.IncreaseScore(5);
         }
     }
 }
