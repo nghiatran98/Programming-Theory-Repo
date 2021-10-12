@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isGameActive;
+    [SerializeField] public GameObject gameOver;
+
     [SerializeField] private GameObject[] enemyPrefabs;
     // Variables representing the coordinates of animal
     private float rangeX = 20;
@@ -18,6 +21,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isGameActive = true;
+        gameObject.SetActive(false);
         InvokeRepeating("SpawnEnemy", spawnStart, spawnRate);
     }
 
@@ -29,8 +34,11 @@ public class GameManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        int randomIndex = Random.Range(0, enemyPrefabs.Length);
-        Instantiate(enemyPrefabs[randomIndex], RandomPosition(), enemyPrefabs[randomIndex].transform.rotation);
+        if (isGameActive)
+        {
+            int randomIndex = Random.Range(0, enemyPrefabs.Length);
+            Instantiate(enemyPrefabs[randomIndex], RandomPosition(), enemyPrefabs[randomIndex].transform.rotation);
+        }
     }
 
     Vector3 RandomPosition()
@@ -41,6 +49,12 @@ public class GameManager : MonoBehaviour
         Vector3 randomPos = new Vector3(randomXPos, posY, randomZPos);
 
         return randomPos;
+    }
+
+    public void GameOver()
+    {
+        isGameActive = false;
+        gameObject.SetActive(true);
     }
 
 }
