@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Fast Animal") || collision.gameObject.CompareTag("Slow Animal"))
+        if (collision.gameObject.CompareTag("Fast Animal") || collision.gameObject.CompareTag("Animal"))
         {
             Destroy(gameObject);
             gameManager.GameOver();
