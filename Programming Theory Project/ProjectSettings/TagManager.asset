@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - Fast Animal
+  - Slow Animal
   layers:
   - Default
   - TransparentFX

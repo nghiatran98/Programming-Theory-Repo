@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
+    private GameManager gameManager;
     private Rigidbody playerRb;
     private float speed = 350;
 
@@ -16,11 +17,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
         MovePlayer();
         ShootBullet();
@@ -56,6 +58,15 @@ public class PlayerController : MonoBehaviour
     void ResetCooldown()
     {
         cooldown = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Fast Animal") || collision.gameObject.CompareTag("Slow Animal"))
+        {
+            Destroy(gameObject);
+            gameManager.GameOver();
+        }
     }
 
 }

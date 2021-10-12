@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    private GameManager gameManager;
     [SerializeField] float speed = 40;
     private float topBound = 25;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -36,9 +37,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Fast Animal"))
         {
+            Destroy(gameObject);
             Destroy(other.gameObject);
+            gameManager.IncreaseScore(5);
+        }
+
+        else if (other.CompareTag("Slow Animal"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+            gameManager.IncreaseScore(10);
         }
     }
 }

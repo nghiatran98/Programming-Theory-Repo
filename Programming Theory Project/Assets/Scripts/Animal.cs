@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    private GameManager gameManager;
     public float speed = 2021;
 
     private Rigidbody animalRb;
@@ -15,8 +14,6 @@ public class Animal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-
         animalRb = GetComponent<Rigidbody>();
         animalRb.centerOfMass = com;
     }
@@ -41,15 +38,6 @@ public class Animal : MonoBehaviour
         if (animalPosZ < bottomBound)
         {
             Destroy(gameObject);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(collision.gameObject);
-            gameManager.GameOver();
         }
     }
 

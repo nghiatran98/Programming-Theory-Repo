@@ -8,6 +8,9 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance { get; private set; }
 
     public string playerName { get; private set; }
+    public float highScore { get; private set; }
+    public string bestPlayerName { get; private set; }
+
 
     private void Awake()
     {
@@ -24,6 +27,15 @@ public class MainManager : MonoBehaviour
     public void SavePlayerName(string name)
     {
         playerName = name;
+    }
+
+    public void SetHighScore(string playerName, float score)
+    {
+        if (score > highScore)
+        {
+            highScore = score;
+            bestPlayerName = playerName;
+        }
     }
 
 }

@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: -4129547164149075435}
   m_Layer: 0
   m_Name: Doe
-  m_TagString: Enemy
+  m_TagString: Fast Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

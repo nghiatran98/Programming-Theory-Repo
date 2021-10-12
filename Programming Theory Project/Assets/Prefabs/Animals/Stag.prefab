@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -4455354391708147003}
   m_Layer: 0
   m_Name: Stag
-  m_TagString: Enemy
+  m_TagString: Slow Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
