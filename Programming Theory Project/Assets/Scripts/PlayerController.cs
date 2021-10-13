@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,23 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject SymbolicPowerUp;
+
     private GameManager gameManager;
     private Rigidbody playerRb;
     private float speed = 500;
 
     // Cooldown of shoot bullet
     private bool cooldown = false;
-    private float timeCoolDown = 0.5f;
+    private float normalCD = 0.5f;
+    private float brustCD = 0.1f;
+    private float shootCD;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        shootCD = normalCD;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody>();
     }
@@ -37,7 +43,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // ABSTRACTION
-    void ShootBullet()
+    private void ShootBullet()
     {
         if (Input.GetKey(KeyCode.Space))
         {
@@ -45,13 +51,13 @@ public class PlayerController : MonoBehaviour
             {
                 SpawnBullet();
                 cooldown = true;
-                Invoke("ResetCooldown", timeCoolDown);
+                Invoke("ResetCooldown", shootCD);
             }
         }
     }
 
     // ABSTRACTION
-    void SpawnBullet()
+    private void SpawnBullet()
     {
         Vector3 bulletPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
 
@@ -59,9 +65,34 @@ public class PlayerController : MonoBehaviour
     }
 
     // ABSTRACTION
-    void ResetCooldown()
+    private void ResetCooldown()
     {
         cooldown = false;
+    }
+
+    private void ActivePowerUp()
+    {
+        SymbolicPowerUp.SetActive(true);
+        shootCD = brustCD;
+        StartCoroutine(DeactivePowerUp(15));
+    }
+
+    // ABSTRACTION
+    IEnumerator DeactivePowerUp(int waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        SymbolicPowerUp.SetActive(false);
+        shootCD = normalCD;
+    }
+
+    // ABSTRACTION
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Power Up"))
+        {
+            ActivePowerUp();
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3737528223708757560}
   - component: {fileID: -1377797615759786759}
   - component: {fileID: -4455354391708147003}
-  - component: {fileID: 5120061408728468494}
+  - component: {fileID: 1203697925229710693}
   m_Layer: 0
   m_Name: Stag
   m_TagString: Animal
@@ -123,7 +123,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1931423, y: 0.49307156, z: 0.43458965}
   m_Center: {x: 0.007368955, y: 0.25346458, z: 0.04613741}
---- !u!114 &5120061408728468494
+--- !u!114 &1203697925229710693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3737528223718194054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41ad782e7144b7044a5d5d97e27add2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1842b0e773e04f041a662005ab7742a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 64818

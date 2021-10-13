@@ -40,6 +40,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Fast Animal"))
         {
+            gameManager.SpawnPowerUp(other.gameObject.transform.position);
             Destroy(gameObject);
             Destroy(other.gameObject);
             gameManager.IncreaseScore(10);
@@ -47,6 +48,7 @@ public class Bullet : MonoBehaviour
 
         else if (other.CompareTag("Animal"))
         {
+            gameManager.SpawnPowerUp(other.gameObject.transform.position);
             Destroy(gameObject);
             Destroy(other.gameObject);
             gameManager.IncreaseScore(5);

@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 4646659354333352617}
   - component: {fileID: -4676352593031814384}
   - component: {fileID: -2573132124789568345}
-  - component: {fileID: 8782502586443457199}
+  - component: {fileID: 859598656918643241}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Fast Animal
@@ -1038,7 +1038,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.078921616, y: 0.21861301, z: 0.32750645}
   m_Center: {x: 0.0006417692, y: 0.10718973, z: 0.014832593}
---- !u!114 &8782502586443457199
+--- !u!114 &859598656918643241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1047,10 +1047,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4646659354342902301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1842b0e773e04f041a662005ab7742a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 41ad782e7144b7044a5d5d97e27add2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3021
+  speed: 2021
 --- !u!1 &4646659354342902717
 GameObject:
   m_ObjectHideFlags: 0
