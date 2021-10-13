@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         if (player != null)
         {
-            Vector3 symbolicPos = new Vector3(player.transform.position.x, player.transform.position.y + 2.5f, player.transform.position.z);
+            Vector3 symbolicPos = new Vector3(player.transform.position.x, player.transform.position.y + 2.5f, player.transform.position.z + 0.5f) ;
             symbolicPowerUp.transform.position = symbolicPos;
         }
 
